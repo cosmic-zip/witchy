@@ -13,4 +13,5 @@ needed. We do believe in coordinated disclosure, so in order to address them, an
 coordinate disclosure with you (and properly credit you for the
 discovery), report them to us. Do not open bug reports or pull requests.
 
-Our contact email for security issues is TBA
+Bug found? Questions? Access Withy community:
+[discussions](https://github.com/cosmic-zip/witchy/discussions)
