@@ -1,0 +1,39 @@
+name: witchy
+version: "0.20.0"
+summary: witchy shell
+grade: stable
+confinement: strict
+base: core24
+type: app
+compression: lzo
+license: GPL-3.0+
+source-code: https://github.com/cosmic-zip/witchy
+description: |
+  **Witchy**
+
+  Witchy are a shell interpreter and rootless busybox alternative, witchy are project to replace the bash as a backend command line software for the witch_craft project.
+
+platforms:
+  amd64:
+    build-on: [amd64]
+    build-for: [amd64]
+  arm64:
+    build-on: [arm64]
+    build-for: [arm64]
+
+environment:
+  WITCHY_ROOT_DIR: $SNAP/var/witchy/config
+
+parts:
+  config:
+    source: config
+    plugin: dump
+
+  witchy:
+    plugin: rust
+    source: ./witchy
+
+apps:
+  witchy:
+    command: bin/witchy
+    plugs: [home, network, network-bind, removable-media]
